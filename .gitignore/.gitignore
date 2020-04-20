@@ -1,2 +1,8 @@
+data/*
+
+!.gitkeep
+*.csv
 *.mp3
-*.tsv
+
+__pycache__/
+.ipynb_checkpoints/
