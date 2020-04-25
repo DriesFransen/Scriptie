@@ -3,6 +3,7 @@ Data/*
 !.gitkeep
 *.csv
 *.mp3
+*.wav
 *.tsv
 
 __pycache__/
