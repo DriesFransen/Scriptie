@@ -50,4 +50,24 @@ Downsample en Split.ipynb
 			- p: een boolean voor het wel of niet printen van informatie over de stappen die het programma neemt
 		return
 			- niks, deze functie voert het downsamplen uit, splitst daarna de resulterende lijst met bestandsnamen volgens de opgegeven weights, 
-				en zet de daaruit voortkomende train, test en validation sets in drie verschillende mappen 
+				en zet de daaruit voortkomende train, test en validation sets in drie verschillende mappen
+
+
+low-pass filter and MFCC extraction.ipynb
+	get_MFCC_per_folder(path, cutoff=400, order=6, top_db=20)
+		argumenten
+			-path: het pad naar de plek waar de data is opgeslagen (bijvoorbeeld 'Downsampled/nl/train')
+			-cutoff: de upper-bound van de low-pass filter in Hertz. default is 400 Hertz.
+			-order: een parameter voor de low-pass filter. default is 6.
+			-top_db: Drempelwaarde onder de referentie waarde (vaak het maximum van het audio signaal). Als het verschil tussen een stukje audio en de referentie waarde
+				 groter is dan de top_db, dan wordt dat stukje audio aangemerkt als 'stilte' (waarde van nul). default is 20 decibel.
+		return
+			-een dictionary met het volgende key-value paar: (ID van audio file, MFCC waardes van desbetreffende audio file)
+
+	get_paths_of_language(soure_path, language_folder, sub_folders)
+		argumenten
+			-source_path: het pad waar alle audio data zit opgeslagen (in dit geval de folder 'Downsampled')
+			-language_folder: de folder waar de data van een taal zit opgeslagen (bijvoorbeeld 'nl')
+			-sub_folders: de folders die in de language_folder zitten (bijvoorbeeld 'train_wav_clips'). Selecteer hier de relevante sub folders die u wilt gebruiken.
+		return
+			-een lijst van paden waar audio data zit opgeslagen.
