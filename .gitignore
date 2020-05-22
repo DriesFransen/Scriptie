@@ -5,6 +5,7 @@ Data/*
 *.mp3
 *.wav
 *.tsv
+*.json
 
 __pycache__/
 .ipynb_checkpoints/
